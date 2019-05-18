@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		F56D4AAA228CC17B002024F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AA9228CC17B002024F8 /* AppDelegate.swift */; };
-		F56D4AAC228CC17B002024F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AAB228CC17B002024F8 /* ViewController.swift */; };
+		F56D4AAC228CC17B002024F8 /* NYCSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AAB228CC17B002024F8 /* NYCSchoolViewController.swift */; };
 		F56D4AAF228CC17B002024F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D4AAD228CC17B002024F8 /* Main.storyboard */; };
 		F56D4AB1228CC17C002024F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56D4AB0228CC17C002024F8 /* Assets.xcassets */; };
 		F56D4AB4228CC17C002024F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D4AB2228CC17C002024F8 /* LaunchScreen.storyboard */; };
 		F56D4ABF228CC17C002024F8 /* LearningCorpCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4ABE228CC17C002024F8 /* LearningCorpCodeTests.swift */; };
+		F56D4AE7228FA2A7002024F8 /* NYCSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AE6228FA2A7002024F8 /* NYCSchool.swift */; };
+		F56D4AEE228FAD5D002024F8 /* NYCSchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AED228FAD5D002024F8 /* NYCSchoolCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +30,7 @@
 /* Begin PBXFileReference section */
 		F56D4AA6228CC17A002024F8 /* LearningCorpCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningCorpCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56D4AA9228CC17B002024F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F56D4AAB228CC17B002024F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F56D4AAB228CC17B002024F8 /* NYCSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolViewController.swift; sourceTree = "<group>"; };
 		F56D4AAE228CC17B002024F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F56D4AB0228CC17C002024F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F56D4AB3228CC17C002024F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		F56D4ABA228CC17C002024F8 /* LearningCorpCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningCorpCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56D4ABE228CC17C002024F8 /* LearningCorpCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCorpCodeTests.swift; sourceTree = "<group>"; };
 		F56D4AC0228CC17C002024F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F56D4AE6228FA2A7002024F8 /* NYCSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchool.swift; sourceTree = "<group>"; };
+		F56D4AED228FAD5D002024F8 /* NYCSchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				F56D4AA9228CC17B002024F8 /* AppDelegate.swift */,
-				F56D4AAB228CC17B002024F8 /* ViewController.swift */,
+				F56D4AEB228FACA0002024F8 /* Model */,
+				F56D4AEA228FAC7F002024F8 /* ViewController */,
 				F56D4AAD228CC17B002024F8 /* Main.storyboard */,
 				F56D4AB0228CC17C002024F8 /* Assets.xcassets */,
 				F56D4AB2228CC17C002024F8 /* LaunchScreen.storyboard */,
@@ -94,6 +99,31 @@
 				F56D4AC0228CC17C002024F8 /* Info.plist */,
 			);
 			path = LearningCorpCodeTests;
+			sourceTree = "<group>";
+		};
+		F56D4AEA228FAC7F002024F8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F56D4AEC228FACD6002024F8 /* Cell */,
+				F56D4AAB228CC17B002024F8 /* NYCSchoolViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F56D4AEB228FACA0002024F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F56D4AE6228FA2A7002024F8 /* NYCSchool.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F56D4AEC228FACD6002024F8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F56D4AED228FAD5D002024F8 /* NYCSchoolCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F56D4AAC228CC17B002024F8 /* ViewController.swift in Sources */,
+				F56D4AEE228FAD5D002024F8 /* NYCSchoolCell.swift in Sources */,
+				F56D4AAC228CC17B002024F8 /* NYCSchoolViewController.swift in Sources */,
+				F56D4AE7228FA2A7002024F8 /* NYCSchool.swift in Sources */,
 				F56D4AAA228CC17B002024F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
