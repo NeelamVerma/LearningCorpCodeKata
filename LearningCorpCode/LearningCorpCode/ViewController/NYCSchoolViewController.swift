@@ -49,10 +49,27 @@ extension NYCSchoolViewController: UITableViewDelegate, UITableViewDataSource {
             cell.schoolNameLabel.text = viewModel.schoolNameToDisplay(for: indexPath)
             cell.schoolEmailLabel.text = viewModel.schoolEmailToDisplay(for: indexPath)
             cell.schoolPhoneNumber.text = viewModel.schoolPhoneToDisplay(for: indexPath)
+            cell.navigateToMap.tag = indexPath.row
             return cell
         }
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let animation = AnimationFactory.makeSlideIn(duration: 0.5, delayFactor: 0.05)
+        let animator = Animator(animation: animation)
+        animator.animate(cell: cell, at: indexPath, in: tableView)
+    }
+    
+}
+
+extension UITableView {
+    func isLastVisibleCell(at indexPath: IndexPath) -> Bool {
+        guard let lastIndexPath = indexPathsForVisibleRows?.last else {
+            return false
+        }
+        
+        return lastIndexPath == indexPath
+    }
 }
 

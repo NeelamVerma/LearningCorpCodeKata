@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class NYCSchoolViewModel: NSObject {
     var nycSchools = [NYCSchool]()

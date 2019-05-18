@@ -18,6 +18,7 @@
 		F56D4AF0228FB058002024F8 /* SchoolService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AEF228FB058002024F8 /* SchoolService.swift */; };
 		F56D4AF2228FB0EC002024F8 /* NYCSchoolConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AF1228FB0EC002024F8 /* NYCSchoolConstants.swift */; };
 		F56D4AF4228FB752002024F8 /* NYCSchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AF3228FB752002024F8 /* NYCSchoolViewModel.swift */; };
+		F56D4AF6228FCFFD002024F8 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AF5228FCFFD002024F8 /* Animation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		F56D4AEF228FB058002024F8 /* SchoolService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolService.swift; sourceTree = "<group>"; };
 		F56D4AF1228FB0EC002024F8 /* NYCSchoolConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolConstants.swift; sourceTree = "<group>"; };
 		F56D4AF3228FB752002024F8 /* NYCSchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolViewModel.swift; sourceTree = "<group>"; };
+		F56D4AF5228FCFFD002024F8 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				F56D4AA9228CC17B002024F8 /* AppDelegate.swift */,
 				F56D4AEF228FB058002024F8 /* SchoolService.swift */,
 				F56D4AF3228FB752002024F8 /* NYCSchoolViewModel.swift */,
+				F56D4AF5228FCFFD002024F8 /* Animation.swift */,
 				F56D4AF1228FB0EC002024F8 /* NYCSchoolConstants.swift */,
 				F56D4AEB228FACA0002024F8 /* Model */,
 				F56D4AEA228FAC7F002024F8 /* ViewController */,
@@ -238,6 +241,7 @@
 			files = (
 				F56D4AEE228FAD5D002024F8 /* NYCSchoolCell.swift in Sources */,
 				F56D4AF4228FB752002024F8 /* NYCSchoolViewModel.swift in Sources */,
+				F56D4AF6228FCFFD002024F8 /* Animation.swift in Sources */,
 				F56D4AAC228CC17B002024F8 /* NYCSchoolViewController.swift in Sources */,
 				F56D4AF2228FB0EC002024F8 /* NYCSchoolConstants.swift in Sources */,
 				F56D4AE7228FA2A7002024F8 /* NYCSchool.swift in Sources */,

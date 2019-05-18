@@ -15,9 +15,7 @@ struct NYCSchool: Decodable {
     var phone_number: String?
     var total_students: String?
     var website: String?
-    var primary_address_line_1: String?
-    var state_code: String?
-    var city: String?
-    var zip: String?
+    var latitude: String?
+    var longitude: String?
 }
 

@@ -13,6 +13,5 @@ class NYCSchoolCell: UITableViewCell {
     @IBOutlet weak var schoolNameLabel: UILabel!
     @IBOutlet weak var schoolEmailLabel: UILabel!
     @IBOutlet weak var schoolPhoneNumber: UILabel!
-    @IBOutlet weak var totalStudentsLabel: UILabel!
-    
+    @IBOutlet weak var navigateToMap: UIButton!
 }

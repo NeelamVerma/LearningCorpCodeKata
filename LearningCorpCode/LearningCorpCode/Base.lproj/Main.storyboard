@@ -75,6 +75,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="navigateToMap" destination="x6G-hX-2ab" id="OS9-ZL-e9g"/>
                                             <outlet property="schoolEmailLabel" destination="0Z1-3u-Bap" id="Rtn-kq-qre"/>
                                             <outlet property="schoolNameLabel" destination="vUo-lD-0Fy" id="P6h-lJ-84w"/>
                                             <outlet property="schoolPhoneNumber" destination="Aek-b0-Vdh" id="XxE-Pd-a8L"/>
