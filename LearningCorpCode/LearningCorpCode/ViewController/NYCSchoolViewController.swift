@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class NYCSchoolViewController: UIViewController {
 
@@ -35,6 +36,16 @@ class NYCSchoolViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    @objc func navigateToAddress(for sender: UIButton) {
+        
+        if let latitude = Double(viewModel.nycSchools[sender.tag].latitude ?? "0.0"), let longitude = Double(viewModel.nycSchools[sender.tag].longitude ?? "0.0") {
+            let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+            mapItem.name = "\(viewModel.nycSchools[sender.tag].school_name ?? "UNKNOWN")"
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+        }
+    }
 }
 
 extension NYCSchoolViewController: UITableViewDelegate, UITableViewDataSource {
@@ -50,6 +61,7 @@ extension NYCSchoolViewController: UITableViewDelegate, UITableViewDataSource {
             cell.schoolEmailLabel.text = viewModel.schoolEmailToDisplay(for: indexPath)
             cell.schoolPhoneNumber.text = viewModel.schoolPhoneToDisplay(for: indexPath)
             cell.navigateToMap.tag = indexPath.row
+            cell.navigateToMap.addTarget(self, action: #selector(self.navigateToAddress(for :)), for: .touchUpInside)
             return cell
         }
         return UITableViewCell()

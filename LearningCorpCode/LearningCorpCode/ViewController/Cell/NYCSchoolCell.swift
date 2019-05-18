@@ -10,6 +10,10 @@ import UIKit
 
 class NYCSchoolCell: UITableViewCell {
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     @IBOutlet weak var schoolNameLabel: UILabel!
     @IBOutlet weak var schoolEmailLabel: UILabel!
     @IBOutlet weak var schoolPhoneNumber: UILabel!
