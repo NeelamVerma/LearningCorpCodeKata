@@ -17,7 +17,6 @@ class SchoolService: NSObject {
     //MARK:- Network Vars
     var session = URLSession.shared
     var nycSchoolURL = Constants.NYC_SCHOOL_URL
-    var nycSchoolSatDetailURL = Constants.NYC_SCHOOL_SAT_DETAIL_URL
     
     //MARK:- Network APIS
     /// To fetch NYC high Schools page by page , per page limit is set to 10
@@ -26,7 +25,7 @@ class SchoolService: NSObject {
     ///   - pageNumber: page offset
     ///   - completion: is all data gets fetched
     ///   - failure: failure
-    func fetchListOfNYCSchools(pageNumber: Int = 0, completion: @escaping (Bool) -> (), failure: @escaping (String) -> ()) {
+    func fetchListOfNYCSchools(pageNumber: Int = 0, completion: @escaping ([NYCSchool], Bool) -> (), failure: @escaping (String) -> ()) {
         guard var urlComponents = URLComponents(string: nycSchoolURL) else {
             self.resetPageOffsetToPrevious(failure: failure, error: "Unexpected error")
             return
@@ -48,9 +47,9 @@ class SchoolService: NSObject {
             do {
                 let listOfSchools =  try JSONDecoder().decode([NYCSchool].self, from: data)
                 if listOfSchools.count < self.limit {
-                    completion(false)
+                    completion(listOfSchools, false)
                 } else {
-                    completion(true)
+                    completion(listOfSchools, true)
                 }
             } catch {
                 self.resetPageOffsetToPrevious(failure: failure, error: error.localizedDescription)
