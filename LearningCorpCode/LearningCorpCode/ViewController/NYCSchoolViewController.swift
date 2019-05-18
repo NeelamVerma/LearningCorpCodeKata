@@ -23,7 +23,7 @@ class NYCSchoolViewController: UIViewController {
     fileprivate func reloadTableView() {
         DispatchQueue.main.async {
             self.nycSchoolsTableView.reloadData()
-            //self.nycSchoolsTableView.isHidden = self.viewModel.nycSchools.count == 0
+            self.nycSchoolsTableView.isHidden = self.viewModel.nycSchools.count == 0
             self.moreButton.isEnabled = self.viewModel.isMore
         }
     }
@@ -75,13 +75,4 @@ extension NYCSchoolViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension UITableView {
-    func isLastVisibleCell(at indexPath: IndexPath) -> Bool {
-        guard let lastIndexPath = indexPathsForVisibleRows?.last else {
-            return false
-        }
-        
-        return lastIndexPath == indexPath
-    }
-}
 

@@ -44,3 +44,13 @@ class NYCSchoolViewModel: NSObject {
         return nycSchools[IndexPath.row].phone_number ?? "UNKNOWN"
     }
 }
+
+extension UITableView {
+    func isLastVisibleCell(at indexPath: IndexPath) -> Bool {
+        guard let lastIndexPath = indexPathsForVisibleRows?.last else {
+            return false
+        }
+        
+        return lastIndexPath == indexPath
+    }
+}
