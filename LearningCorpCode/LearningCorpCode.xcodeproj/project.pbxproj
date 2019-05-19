@@ -20,6 +20,10 @@
 		F56D4AF4228FB752002024F8 /* NYCSchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AF3228FB752002024F8 /* NYCSchoolViewModel.swift */; };
 		F56D4AF6228FCFFD002024F8 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AF5228FCFFD002024F8 /* Animation.swift */; };
 		F56D4AFC2290FF40002024F8 /* SchoolServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AFB2290FF40002024F8 /* SchoolServiceTests.swift */; };
+		F56D4AFE2291069C002024F8 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AFD2291069C002024F8 /* MockURLSession.swift */; };
+		F56D4B0022910A81002024F8 /* NYCSchoolViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AFF22910A81002024F8 /* NYCSchoolViewModelTests.swift */; };
+		F56D4B1D22911784002024F8 /* UITableView+CellPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4B1C22911784002024F8 /* UITableView+CellPathExtension.swift */; };
+		F56D4B1F229117B1002024F8 /* UITableView+CellPathExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4B1E229117B1002024F8 /* UITableView+CellPathExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,10 @@
 		F56D4AF3228FB752002024F8 /* NYCSchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolViewModel.swift; sourceTree = "<group>"; };
 		F56D4AF5228FCFFD002024F8 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		F56D4AFB2290FF40002024F8 /* SchoolServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolServiceTests.swift; sourceTree = "<group>"; };
+		F56D4AFD2291069C002024F8 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		F56D4AFF22910A81002024F8 /* NYCSchoolViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolViewModelTests.swift; sourceTree = "<group>"; };
+		F56D4B1C22911784002024F8 /* UITableView+CellPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+CellPathExtension.swift"; sourceTree = "<group>"; };
+		F56D4B1E229117B1002024F8 /* UITableView+CellPathExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+CellPathExtensionTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,9 @@
 			children = (
 				F56D4ABE228CC17C002024F8 /* LearningCorpCodeTests.swift */,
 				F56D4AFB2290FF40002024F8 /* SchoolServiceTests.swift */,
+				F56D4B1E229117B1002024F8 /* UITableView+CellPathExtensionTests.swift */,
+				F56D4AFF22910A81002024F8 /* NYCSchoolViewModelTests.swift */,
+				F56D4AFD2291069C002024F8 /* MockURLSession.swift */,
 				F56D4AC0228CC17C002024F8 /* Info.plist */,
 			);
 			path = LearningCorpCodeTests;
@@ -153,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				F56D4AF1228FB0EC002024F8 /* NYCSchoolConstants.swift */,
+				F56D4B1C22911784002024F8 /* UITableView+CellPathExtension.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -264,6 +276,7 @@
 				F56D4AAC228CC17B002024F8 /* NYCSchoolViewController.swift in Sources */,
 				F56D4AF2228FB0EC002024F8 /* NYCSchoolConstants.swift in Sources */,
 				F56D4AE7228FA2A7002024F8 /* NYCSchool.swift in Sources */,
+				F56D4B1D22911784002024F8 /* UITableView+CellPathExtension.swift in Sources */,
 				F56D4AF0228FB058002024F8 /* SchoolService.swift in Sources */,
 				F56D4AAA228CC17B002024F8 /* AppDelegate.swift in Sources */,
 			);
@@ -273,8 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F56D4AFE2291069C002024F8 /* MockURLSession.swift in Sources */,
 				F56D4ABF228CC17C002024F8 /* LearningCorpCodeTests.swift in Sources */,
+				F56D4B0022910A81002024F8 /* NYCSchoolViewModelTests.swift in Sources */,
 				F56D4AFC2290FF40002024F8 /* SchoolServiceTests.swift in Sources */,
+				F56D4B1F229117B1002024F8 /* UITableView+CellPathExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

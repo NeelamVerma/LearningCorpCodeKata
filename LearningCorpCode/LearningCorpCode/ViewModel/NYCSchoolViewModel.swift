@@ -11,18 +11,14 @@ import MapKit
 
 class NYCSchoolViewModel: NSObject {
     var nycSchools = [NYCSchool]()
-    var selectedNYCSchool: NYCSchool?
     var schoolService = SchoolService()
     var isMore = false
     
     func getSchoolList(completion:@escaping () -> Void, failure: @escaping (String) -> Void){
         schoolService.fetchListOfNYCSchools(completion: { (listOfSchool, isMore) in
-            DispatchQueue.main.async {
-                self.nycSchools.append(contentsOf: listOfSchool)
-                self.isMore = isMore
-                completion()
-            }
-            
+            self.nycSchools.append(contentsOf: listOfSchool)
+            self.isMore = isMore
+            completion()
         }) { error in
             failure(error)
         }
@@ -50,18 +46,8 @@ class NYCSchoolViewModel: NSObject {
     }
     
     func animateCellIn(_ tableView: UITableView, cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let animation = AnimationFactory.makeSlideIn(duration: 0.5, delayFactor: 0.05)
+        let animation = AnimationFactory.makeSlideFall(duration: 0.5, delayFactor: 0.05)
         let animator = Animator(animation: animation)
         animator.animate(cell: cell, at: indexPath, in: tableView)
-    }
-}
-
-extension UITableView {
-    func isLastVisibleCell(at indexPath: IndexPath) -> Bool {
-        guard let lastIndexPath = indexPathsForVisibleRows?.last else {
-            return false
-        }
-        
-        return lastIndexPath == indexPath
     }
 }

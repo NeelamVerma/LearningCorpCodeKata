@@ -28,9 +28,7 @@ class SchoolServiceTests: XCTestCase {
     
     //MARK:- session task tests
     func test_get_request_with_URL() {
-        guard var urlComponents = URLComponents(string: Constants.NYC_SCHOOL_URL) else {
-            return
-        }
+        var urlComponents = URLComponents(string: Constants.NYC_SCHOOL_URL)!
         urlComponents.query = "$limit=\(subject.limit)&$offset=\(subject.pageOffset)"
         let url: URL? = urlComponents.url
         subject.fetchListOfNYCSchools(completion: { ( list , isMore) in }) { error in }
@@ -139,30 +137,5 @@ class SchoolServiceTests: XCTestCase {
     }
 }
 
-//MARK:- Mock Session
-// mock session to mock data and error
 
-class MockURLSession: URLSession {
-    typealias completionHandler = (Data?, URLResponse?,Error?) -> Void
-    var nextDataTask = MockURLSessionDataTask()
-    var nextData: Data?
-    var nextError: Error?
-    private (set) var lastURL: URL?
-    
-    override func dataTask(with request: URLRequest, completionHandler: @escaping completionHandler) -> URLSessionDataTask {
-        lastURL = request.url
-        
-        completionHandler(nextData, nil, nextError)
-        return nextDataTask
-    }
-}
-
-// mock urlSessionDataTask
-class MockURLSessionDataTask: URLSessionDataTask {
-    private (set) var resumeWasCalled = false
-    
-    override func resume() {
-        resumeWasCalled = true
-    }
-}
 

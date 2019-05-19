@@ -10,17 +10,25 @@ import UIKit
 
 typealias Animation = (UITableViewCell, IndexPath, UITableView) -> Void
 
-enum AnimationFactory {
+private let transformFan = { (layer: CALayer) -> CATransform3D in
+    var transform = CATransform3DIdentity
+    transform = CATransform3DTranslate(transform, -layer.bounds.size.width/2.0, 0.0, 0.0)
+    transform = CATransform3DRotate(transform, -CGFloat(Double.pi)/2.0, 0.0, 0.0, 1.0)
+    transform = CATransform3DTranslate(transform, layer.bounds.size.width/2.0, 0.0, 0.0)
+    return transform
+}
+
+struct AnimationFactory {
     
-    static func makeSlideIn(duration: TimeInterval, delayFactor: Double) -> Animation {
+    static func makeSlideFall(duration: TimeInterval, delayFactor: Double) -> Animation {
         return { cell, indexPath, tableView in
-            cell.transform = CGAffineTransform(translationX: tableView.bounds.width, y: 0)
+            cell.contentView.layer.transform = transformFan(cell.layer)
             UIView.animate(
                 withDuration: duration,
                 delay: delayFactor * Double(indexPath.row),
                 options: [.curveEaseIn],
                 animations: {
-                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
+                    cell.contentView.layer.transform = CATransform3DIdentity
             })
         }
     }
