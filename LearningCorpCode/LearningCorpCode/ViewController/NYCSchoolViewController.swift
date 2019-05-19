@@ -12,14 +12,19 @@ class NYCSchoolViewController: UIViewController {
 
     @IBOutlet weak var nycSchoolsTableView: UITableView!
     @IBOutlet weak var moreButton: UIButton!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var viewModel = NYCSchoolViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
         viewModel.getSchoolList(completion: reloadTableView, failure: failure)
     }
     
     @IBAction func fetchMoreSchools(_ sender: Any) {
+        activityIndicator.startAnimating()
         if viewModel.nycSchools.count > 0 {
             viewModel.schoolService.pageOffset = viewModel.schoolService.pageOffset + viewModel.schoolService.limit
         }
@@ -31,6 +36,7 @@ class NYCSchoolViewController: UIViewController {
             self.nycSchoolsTableView.reloadData()
             self.nycSchoolsTableView.isHidden = self.viewModel.nycSchools.count == 0
             self.moreButton.isEnabled = self.viewModel.isMore
+            self.activityIndicator.stopAnimating()
         }
     }
 
@@ -40,6 +46,7 @@ class NYCSchoolViewController: UIViewController {
             let ok = UIAlertAction(title: Constants.OK, style: .default, handler: nil)
             alertController.addAction(ok)
             self.present(alertController, animated: true, completion: nil)
+            self.activityIndicator.stopAnimating()
         }
     }
 }
