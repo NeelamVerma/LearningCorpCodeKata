@@ -31,4 +31,10 @@ class NYCSchoolCell: UITableViewCell {
         view?.layer.masksToBounds = false
     }
     
+    func setContent(withSchool: NYCSchool) {
+        schoolNameLabel.text = withSchool.school_name
+        schoolEmailLabel.text = withSchool.school_email
+        schoolPhoneNumber.text = withSchool.phone_number
+    }
+    
 }

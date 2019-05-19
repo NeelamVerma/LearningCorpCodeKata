@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class NYCSchoolViewModel: NSObject {
     var nycSchools = [NYCSchool]()
@@ -31,16 +32,27 @@ class NYCSchoolViewModel: NSObject {
         return nycSchools.count
     }
     
-    func schoolNameToDisplay(for IndexPath: IndexPath) -> String {
-        return nycSchools[IndexPath.row].school_name ?? "UNKNOWN"
+    @objc func navigateToMap(for sender: UIButton)  {
+        if let latitude = Double(nycSchools[sender.tag].latitude ?? "0.0"), let longitude = Double(nycSchools[sender.tag].longitude ?? "0.0") {
+            let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+            mapItem.name = "\(nycSchools[sender.tag].school_name ?? "UNKNOWN")"
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+        }
     }
     
-    func schoolEmailToDisplay(for IndexPath: IndexPath) -> String {
-        return nycSchools[IndexPath.row].school_email ?? "UNKNOWN"
+    func cellForRowIn(_ tableView: UITableView, atIndexPath indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.NYC_SCHOOL_CELL_IDENTIFIER, for: indexPath) as? NYCSchoolCell ?? NYCSchoolCell()
+        cell.setContent(withSchool: nycSchools[indexPath.row])
+        cell.navigateToMap.tag = indexPath.row
+        cell.navigateToMap.addTarget(self, action: #selector(navigateToMap(for:)), for: .touchUpInside)
+        return cell
     }
     
-    func schoolPhoneToDisplay(for IndexPath: IndexPath) -> String {
-        return nycSchools[IndexPath.row].phone_number ?? "UNKNOWN"
+    func animateCellIn(_ tableView: UITableView, cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let animation = AnimationFactory.makeSlideIn(duration: 0.5, delayFactor: 0.05)
+        let animator = Animator(animation: animation)
+        animator.animate(cell: cell, at: indexPath, in: tableView)
     }
 }
 

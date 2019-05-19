@@ -43,16 +43,6 @@ class NYCSchoolViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-    
-    @objc func navigateToAddress(for sender: UIButton) {
-        
-        if let latitude = Double(viewModel.nycSchools[sender.tag].latitude ?? "0.0"), let longitude = Double(viewModel.nycSchools[sender.tag].longitude ?? "0.0") {
-            let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-            mapItem.name = "\(viewModel.nycSchools[sender.tag].school_name ?? "UNKNOWN")"
-            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
-        }
-    }
 }
 
 extension NYCSchoolViewController: UITableViewDelegate, UITableViewDataSource {
@@ -62,22 +52,11 @@ extension NYCSchoolViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.NYC_SCHOOL_CELL_IDENTIFIER, for: indexPath) as? NYCSchoolCell {
-            cell.schoolNameLabel.text = viewModel.schoolNameToDisplay(for: indexPath)
-            cell.schoolEmailLabel.text = viewModel.schoolEmailToDisplay(for: indexPath)
-            cell.schoolPhoneNumber.text = viewModel.schoolPhoneToDisplay(for: indexPath)
-            cell.navigateToMap.tag = indexPath.row
-            cell.navigateToMap.addTarget(self, action: #selector(self.navigateToAddress(for :)), for: .touchUpInside)
-            return cell
-        }
-        return UITableViewCell()
+        return viewModel.cellForRowIn(tableView, atIndexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let animation = AnimationFactory.makeSlideIn(duration: 0.5, delayFactor: 0.05)
-        let animator = Animator(animation: animation)
-        animator.animate(cell: cell, at: indexPath, in: tableView)
+        viewModel.animateCellIn(tableView, cell: cell, forRowAt: indexPath)
     }
     
 }
