@@ -13,7 +13,7 @@ class NYCSchoolCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var schoolNameLabel: UILabel!
     @IBOutlet weak var schoolEmailLabel: UILabel!
-    @IBOutlet weak var schoolPhoneNumber: UILabel!
+    @IBOutlet weak var schoolPhoneNumber: UITextView!
     @IBOutlet weak var navigateToMap: UIButton!
     
     override func awakeFromNib() {
@@ -32,9 +32,9 @@ class NYCSchoolCell: UITableViewCell {
     }
     
     func setContent(withSchool: NYCSchool) {
-        schoolNameLabel.text = withSchool.school_name
-        schoolEmailLabel.text = withSchool.school_email
-        schoolPhoneNumber.text = withSchool.phone_number
+        schoolNameLabel.text = withSchool.school_name ?? Constants.UNKNOWN
+        schoolEmailLabel.text = withSchool.school_email ?? Constants.UNKNOWN
+        schoolPhoneNumber.text = withSchool.phone_number ?? Constants.UNKNOWN
     }
     
 }

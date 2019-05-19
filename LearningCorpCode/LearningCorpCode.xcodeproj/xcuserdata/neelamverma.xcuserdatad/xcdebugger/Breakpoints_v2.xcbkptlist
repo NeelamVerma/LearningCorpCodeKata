@@ -16,16 +16,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LearningCorpCode/ViewModel/SchoolService.swift"
-            timestampString = "579934989.496127"
+            filePath = "LearningCorpCodeTests/NYCSchoolViewModelTests.swift"
+            timestampString = "579940818.857945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "fetchListOfNYCSchools(completion:failure:)"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "testGetNumberOfSchools()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,14 +35,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LearningCorpCode/ViewModel/SchoolService.swift"
-            timestampString = "579934989.496218"
+            filePath = "LearningCorpCodeTests/NYCSchoolViewModelTests.swift"
+            timestampString = "579940818.858034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "fetchListOfNYCSchools(completion:failure:)"
-            landmarkType = "7">
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "NYCSchoolViewModelTests"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

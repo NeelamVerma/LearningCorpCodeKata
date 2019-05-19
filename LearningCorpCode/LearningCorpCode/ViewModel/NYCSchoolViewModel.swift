@@ -32,7 +32,7 @@ class NYCSchoolViewModel: NSObject {
         if let latitude = Double(nycSchools[sender.tag].latitude ?? "0.0"), let longitude = Double(nycSchools[sender.tag].longitude ?? "0.0") {
             let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
             let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-            mapItem.name = "\(nycSchools[sender.tag].school_name ?? "UNKNOWN")"
+            mapItem.name = "\(nycSchools[sender.tag].school_name ?? Constants.UNKNOWN)"
             mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
         }
     }

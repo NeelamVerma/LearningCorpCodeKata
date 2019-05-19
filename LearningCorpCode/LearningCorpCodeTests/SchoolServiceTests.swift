@@ -86,7 +86,7 @@ class SchoolServiceTests: XCTestCase {
             error = errorMessage
         }
         XCTAssertNotNil(error)
-        XCTAssertEqual(error, "Unexpected error.")
+        XCTAssertEqual(error, Constants.UNEXPECTED_ERROR)
     }
     
     func test_should_show_fail_if_Data_is_nil() {

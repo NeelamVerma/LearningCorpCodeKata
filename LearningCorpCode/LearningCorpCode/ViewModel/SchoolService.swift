@@ -27,12 +27,12 @@ class SchoolService: NSObject {
     ///   - failure: failure
     func fetchListOfNYCSchools(completion: @escaping ([NYCSchool], Bool) -> (), failure: @escaping (String) -> ()) {
         guard var urlComponents = URLComponents(string: nycSchoolURL) else {
-            self.resetPageOffsetToPrevious(failure: failure, error: "Unexpected error")
+            self.resetPageOffsetToPrevious(failure: failure, error: Constants.UNEXPECTED_ERROR)
             return
         }
         urlComponents.query = "$limit=\(limit)&$offset=\(pageOffset)"
         guard let url = urlComponents.url else {
-            self.resetPageOffsetToPrevious(failure: failure, error: "Unexpected error")
+            self.resetPageOffsetToPrevious(failure: failure, error: Constants.UNEXPECTED_ERROR)
             return
         }
         
@@ -68,7 +68,7 @@ class SchoolService: NSObject {
         if self.pageOffset > 0 {
             self.pageOffset = self.pageOffset - self.limit
         }
-        failure("\(error ?? "Unexpected error:").")
+        failure("\(error ?? "\(Constants.UNEXPECTED_ERROR)")")
     }
 
 }

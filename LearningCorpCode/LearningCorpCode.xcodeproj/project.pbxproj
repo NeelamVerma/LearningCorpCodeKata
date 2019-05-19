@@ -12,7 +12,6 @@
 		F56D4AAF228CC17B002024F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D4AAD228CC17B002024F8 /* Main.storyboard */; };
 		F56D4AB1228CC17C002024F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56D4AB0228CC17C002024F8 /* Assets.xcassets */; };
 		F56D4AB4228CC17C002024F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D4AB2228CC17C002024F8 /* LaunchScreen.storyboard */; };
-		F56D4ABF228CC17C002024F8 /* LearningCorpCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4ABE228CC17C002024F8 /* LearningCorpCodeTests.swift */; };
 		F56D4AE7228FA2A7002024F8 /* NYCSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AE6228FA2A7002024F8 /* NYCSchool.swift */; };
 		F56D4AEE228FAD5D002024F8 /* NYCSchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AED228FAD5D002024F8 /* NYCSchoolCell.swift */; };
 		F56D4AF0228FB058002024F8 /* SchoolService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AEF228FB058002024F8 /* SchoolService.swift */; };
@@ -24,6 +23,7 @@
 		F56D4B0022910A81002024F8 /* NYCSchoolViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4AFF22910A81002024F8 /* NYCSchoolViewModelTests.swift */; };
 		F56D4B1D22911784002024F8 /* UITableView+CellPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4B1C22911784002024F8 /* UITableView+CellPathExtension.swift */; };
 		F56D4B1F229117B1002024F8 /* UITableView+CellPathExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4B1E229117B1002024F8 /* UITableView+CellPathExtensionTests.swift */; };
+		F56D4B3E22912D16002024F8 /* NYCSchoolCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D4B3D22912D16002024F8 /* NYCSchoolCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +45,6 @@
 		F56D4AB3228CC17C002024F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F56D4AB5228CC17C002024F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56D4ABA228CC17C002024F8 /* LearningCorpCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningCorpCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F56D4ABE228CC17C002024F8 /* LearningCorpCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCorpCodeTests.swift; sourceTree = "<group>"; };
 		F56D4AC0228CC17C002024F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56D4AE6228FA2A7002024F8 /* NYCSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchool.swift; sourceTree = "<group>"; };
 		F56D4AED228FAD5D002024F8 /* NYCSchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolCell.swift; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		F56D4AFF22910A81002024F8 /* NYCSchoolViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolViewModelTests.swift; sourceTree = "<group>"; };
 		F56D4B1C22911784002024F8 /* UITableView+CellPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+CellPathExtension.swift"; sourceTree = "<group>"; };
 		F56D4B1E229117B1002024F8 /* UITableView+CellPathExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+CellPathExtensionTests.swift"; sourceTree = "<group>"; };
+		F56D4B3D22912D16002024F8 /* NYCSchoolCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +115,9 @@
 		F56D4ABD228CC17C002024F8 /* LearningCorpCodeTests */ = {
 			isa = PBXGroup;
 			children = (
-				F56D4ABE228CC17C002024F8 /* LearningCorpCodeTests.swift */,
 				F56D4AFB2290FF40002024F8 /* SchoolServiceTests.swift */,
 				F56D4B1E229117B1002024F8 /* UITableView+CellPathExtensionTests.swift */,
+				F56D4B3D22912D16002024F8 /* NYCSchoolCellTests.swift */,
 				F56D4AFF22910A81002024F8 /* NYCSchoolViewModelTests.swift */,
 				F56D4AFD2291069C002024F8 /* MockURLSession.swift */,
 				F56D4AC0228CC17C002024F8 /* Info.plist */,
@@ -287,9 +287,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F56D4AFE2291069C002024F8 /* MockURLSession.swift in Sources */,
-				F56D4ABF228CC17C002024F8 /* LearningCorpCodeTests.swift in Sources */,
 				F56D4B0022910A81002024F8 /* NYCSchoolViewModelTests.swift in Sources */,
 				F56D4AFC2290FF40002024F8 /* SchoolServiceTests.swift in Sources */,
+				F56D4B3E22912D16002024F8 /* NYCSchoolCellTests.swift in Sources */,
 				F56D4B1F229117B1002024F8 /* UITableView+CellPathExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

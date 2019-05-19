@@ -36,8 +36,8 @@ class NYCSchoolViewController: UIViewController {
 
     fileprivate func failure(errorMessage: String){
         DispatchQueue.main.async {
-            let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let alertController = UIAlertController(title: Constants.ERROR, message: errorMessage, preferredStyle: .alert)
+            let ok = UIAlertAction(title: Constants.OK, style: .default, handler: nil)
             alertController.addAction(ok)
             self.present(alertController, animated: true, completion: nil)
         }
