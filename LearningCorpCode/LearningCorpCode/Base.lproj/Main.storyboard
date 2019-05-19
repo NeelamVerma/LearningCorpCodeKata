@@ -86,6 +86,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e54-Zk-Z6T">
                                 <rect key="frame" x="109" y="630" width="156" height="30"/>
                                 <state key="normal" title="More"/>
+                                <connections>
+                                    <action selector="fetchMoreSchools:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VNv-av-EWQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

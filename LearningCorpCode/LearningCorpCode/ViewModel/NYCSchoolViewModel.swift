@@ -12,11 +12,10 @@ class NYCSchoolViewModel: NSObject {
     var nycSchools = [NYCSchool]()
     var selectedNYCSchool: NYCSchool?
     var schoolService = SchoolService()
-    var pageNumber: Int = 0
     var isMore = false
     
     func getSchoolList(completion:@escaping () -> Void, failure: @escaping (String) -> Void){
-        schoolService.fetchListOfNYCSchools(pageNumber: pageNumber, completion: { (listOfSchool, isMore) in
+        schoolService.fetchListOfNYCSchools(completion: { (listOfSchool, isMore) in
             DispatchQueue.main.async {
                 self.nycSchools.append(contentsOf: listOfSchool)
                 self.isMore = isMore

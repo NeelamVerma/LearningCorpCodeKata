@@ -20,6 +20,13 @@ class NYCSchoolViewController: UIViewController {
         viewModel.getSchoolList(completion: reloadTableView, failure: failure)
     }
     
+    @IBAction func fetchMoreSchools(_ sender: Any) {
+        if viewModel.nycSchools.count > 0 {
+            viewModel.schoolService.pageOffset = viewModel.schoolService.pageOffset + viewModel.schoolService.limit
+        }
+        viewModel.getSchoolList(completion: reloadTableView, failure: failure)
+    }
+    
     fileprivate func reloadTableView() {
         DispatchQueue.main.async {
             self.nycSchoolsTableView.reloadData()

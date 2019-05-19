@@ -25,7 +25,7 @@ class SchoolService: NSObject {
     ///   - pageNumber: page offset
     ///   - completion: is all data gets fetched
     ///   - failure: failure
-    func fetchListOfNYCSchools(pageNumber: Int = 0, completion: @escaping ([NYCSchool], Bool) -> (), failure: @escaping (String) -> ()) {
+    func fetchListOfNYCSchools(completion: @escaping ([NYCSchool], Bool) -> (), failure: @escaping (String) -> ()) {
         guard var urlComponents = URLComponents(string: nycSchoolURL) else {
             self.resetPageOffsetToPrevious(failure: failure, error: "Unexpected error")
             return
